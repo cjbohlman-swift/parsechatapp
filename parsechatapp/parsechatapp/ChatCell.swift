@@ -9,12 +9,26 @@
 import UIKit
 
 class ChatCell: UITableViewCell {
-
+    
+    /*
     @IBOutlet weak var messageLabel: UILabel!
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    */
+    @IBOutlet weak var bubbleView: UIView!
+ 
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        bubbleView.backgroundColor = UIColor.blue
+        bubbleView.layer.cornerRadius = 16
+        bubbleView.clipsToBounds = true
+        usernameLabel.clipsToBounds = true
+        messageLabel.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

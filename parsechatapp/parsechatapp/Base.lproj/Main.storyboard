@@ -97,24 +97,49 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="wT5-4n-6u6" customClass="ChatCell" customModule="parsechatapp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="68" id="wT5-4n-6u6" customClass="ChatCell" customModule="parsechatapp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wT5-4n-6u6" id="G4B-qo-nYX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message text will go here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPt-1P-LF5">
-                                                    <rect key="frame" x="21" y="11" width="339" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bN-Yh-as5">
+                                                    <rect key="frame" x="8" y="8" width="359" height="51.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPe-G1-fqR">
+                                                            <rect key="frame" x="8" y="8" width="84" height="21"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message text will go here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPt-1P-LF5">
+                                                            <rect key="frame" x="8" y="37" width="198.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="tPt-1P-LF5" firstAttribute="top" secondItem="IPe-G1-fqR" secondAttribute="bottom" constant="8" id="9dt-mG-8uT"/>
+                                                        <constraint firstItem="IPe-G1-fqR" firstAttribute="top" secondItem="1bN-Yh-as5" secondAttribute="top" constant="8" id="DEc-sv-ymk"/>
+                                                        <constraint firstItem="IPe-G1-fqR" firstAttribute="leading" secondItem="1bN-Yh-as5" secondAttribute="leading" constant="8" id="gMi-XV-h9D"/>
+                                                        <constraint firstItem="tPt-1P-LF5" firstAttribute="leading" secondItem="1bN-Yh-as5" secondAttribute="leading" constant="8" id="mtM-cy-l3T"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1bN-Yh-as5" firstAttribute="top" secondItem="G4B-qo-nYX" secondAttribute="top" constant="8" id="2fm-XK-Sxd"/>
+                                                <constraint firstItem="1bN-Yh-as5" firstAttribute="leading" secondItem="G4B-qo-nYX" secondAttribute="leading" constant="8" id="5mC-5R-Lzo"/>
+                                                <constraint firstAttribute="bottom" secondItem="1bN-Yh-as5" secondAttribute="bottom" constant="8" id="9qe-b0-cAA"/>
+                                                <constraint firstAttribute="trailing" secondItem="1bN-Yh-as5" secondAttribute="trailing" constant="8" id="acj-97-CHM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="messageLabel" destination="tPt-1P-LF5" id="6SJ-t5-NyN"/>
+                                            <outlet property="bubbleView" destination="1bN-Yh-as5" id="lz4-uL-YxA"/>
+                                            <outlet property="messageLabel" destination="tPt-1P-LF5" id="9Vd-yZ-q5r"/>
+                                            <outlet property="usernameLabel" destination="IPe-G1-fqR" id="ndR-eU-czR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

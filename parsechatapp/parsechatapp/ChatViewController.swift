@@ -16,9 +16,13 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        chatTableView.rowHeight = UITableViewAutomaticDimension
+        chatTableView.estimatedRowHeight = 50
+
         chatTableView.dataSource = self
         chatTableView.delegate = self
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
+        chatTableView.separatorStyle = .none
         chatTableView.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -36,6 +40,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
         let chatMessage = messages[indexPath.row]
         cell.messageLabel.text = chatMessage["text"] as? String
+        if let user = chatMessage["user"] as? PFUser {
+            cell.usernameLabel.text = user.username
+        } else {
+            cell.usernameLabel.text = "🤖"
+        }
         return cell
     }
     
@@ -59,7 +68,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func onSendTap(_ sender: Any) {
         let chatMessage = PFObject(className: "Message")
         chatMessage["text"] = chatMessageField.text ?? ""
-        print(chatMessage["text"])
+        chatMessage["user"] = PFUser.current()
         chatMessage.saveInBackground { (success, error) in
             if success {
                 print("The message was saved!")
