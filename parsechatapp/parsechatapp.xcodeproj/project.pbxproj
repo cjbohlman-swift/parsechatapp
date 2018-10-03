@@ -12,6 +12,8 @@
 		D907C3732164772000715EB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D907C3712164772000715EB5 /* Main.storyboard */; };
 		D907C3752164772200715EB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D907C3742164772200715EB5 /* Assets.xcassets */; };
 		D907C3782164772200715EB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D907C3762164772200715EB5 /* LaunchScreen.storyboard */; };
+		D918540921655E5200BDE999 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918540821655E5200BDE999 /* ChatViewController.swift */; };
+		D918540B216560F300BDE999 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918540A216560F300BDE999 /* ChatCell.swift */; };
 		E727A6C47198885758C6E633 /* Pods_parsechatapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6961CF5B598F32B68C5D5E9 /* Pods_parsechatapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		D907C3742164772200715EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D907C3772164772200715EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D907C3792164772200715EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D918540821655E5200BDE999 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D918540A216560F300BDE999 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		ECFD6E5B31A525EBCF3574F4 /* Pods-parsechatapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parsechatapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-parsechatapp/Pods-parsechatapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,9 +74,11 @@
 		D907C36C2164772000715EB5 /* parsechatapp */ = {
 			isa = PBXGroup;
 			children = (
+				D918540821655E5200BDE999 /* ChatViewController.swift */,
 				D907C36D2164772000715EB5 /* AppDelegate.swift */,
 				D907C36F2164772000715EB5 /* ViewController.swift */,
 				D907C3712164772000715EB5 /* Main.storyboard */,
+				D918540A216560F300BDE999 /* ChatCell.swift */,
 				D907C3742164772200715EB5 /* Assets.xcassets */,
 				D907C3762164772200715EB5 /* LaunchScreen.storyboard */,
 				D907C3792164772200715EB5 /* Info.plist */,
@@ -162,16 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-parsechatapp/Pods-parsechatapp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
@@ -186,15 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-parsechatapp-checkManifestLockResult.txt",
 			);
@@ -211,6 +209,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D907C3702164772000715EB5 /* ViewController.swift in Sources */,
+				D918540B216560F300BDE999 /* ChatCell.swift in Sources */,
+				D918540921655E5200BDE999 /* ChatViewController.swift in Sources */,
 				D907C36E2164772000715EB5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
