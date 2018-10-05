@@ -32,6 +32,17 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onLogoutPressed(_ sender: Any) {
+        print("button pressed")
+        PFUser.logOutInBackground{ (error) in
+            if (error != nil) {
+                print(error?.localizedDescription)
+            }
+        }
+        performSegue(withIdentifier: "LogoutSegue", sender: nil)
+        print("logged out")
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
@@ -45,6 +56,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             cell.usernameLabel.text = "🤖"
         }
+        cell.selectionStyle = .none
         return cell
     }
     

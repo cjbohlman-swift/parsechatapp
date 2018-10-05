@@ -25,10 +25,11 @@ class ChatCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         bubbleView.backgroundColor = UIColor.blue
-        bubbleView.layer.cornerRadius = 16
+        bubbleView.layer.cornerRadius = bubbleView.frame.size.height/2
         bubbleView.clipsToBounds = true
         usernameLabel.clipsToBounds = true
         messageLabel.clipsToBounds = true
+        messageLabel.textColor = UIColor.white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
